@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>请求信息</title>
+    <style type="text/css">
+        table
+        {
+            border-collapse: collapse;
+            text-align: center;
+            table-layout: fixed;
+            width: 1000px;
+        }
+        table td, table th
+        {
+            border: 1px solid #ececec;
+            height: 30px;
+        }
+        table thead th
+        {
+            width: 100px;
+        }
+        table tr:nth-child(odd)
+        {
+            background: #ececec;
+        }
+        table tr:nth-child(even)
+        {
+            background: #ececec;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+    <table align="center" bgcolor=#ececec style="filter:alpha(opacity=50)" width=400 height=100 border=0>
+        <tr>
+            <td align="left">请求方法：</td>
+            <td align="left" th:text="${method}"></td>
+        </tr>
+        <tr>
+            <td align="left">请求参数email：</td>
+            <td align="left" th:text="${email}"></td>
+        </tr>
+        <tr>
+            <td align="left">请求参数password：</td>
+            <td align="left" th:text="${pwd}"></td>
+        </tr>
+    </table>
+    <br>
+    <table align="center" bgcolor=#ececec style="filter:alpha(opacity=50)" width=400 height=200 border=0>
+        <td align="left">请求头：</td>
+        <tr th:each="value : ${values}">
+            <td align="left" th:text="${value}"></td>
+        </tr>
+        <br>
+    </table>
+
+</div>
+</body>
+</html>
